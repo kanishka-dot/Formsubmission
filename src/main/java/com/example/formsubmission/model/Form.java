@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "form")
 @Data
@@ -22,9 +24,10 @@ public class Form {
     @Column(nullable = false)
     private String addressField;
     private String messageField;
-    @Column(nullable = false, columnDefinition="MEDIUMBLOB")
+    @Column(columnDefinition="MEDIUMBLOB")
     @Lob
     private byte[]  attachmentField;
     @Column(nullable = false)
     private String emailField;
+    private Date creDate;
 }
