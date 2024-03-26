@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "form")
@@ -20,14 +20,14 @@ public class Form {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer formId;
     @Column(nullable = false)
-    private Integer ageField;
+    private Integer age;
     @Column(nullable = false)
-    private String addressField;
-    private String messageField;
+    private String address;
+    private String message;
     @Column(columnDefinition="MEDIUMBLOB")
     @Lob
-    private byte[]  attachmentField;
+    private byte[]  attachment;
     @Column(nullable = false)
-    private String emailField;
+    private String email;
     private Date creDate;
 }

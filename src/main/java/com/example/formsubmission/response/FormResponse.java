@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FormResponse {
-    private String status;
+    private Integer status;
     private String description;
 }
