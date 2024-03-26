@@ -31,6 +31,7 @@ public class FormImpli implements FormService {
                     .message(formDto.getMessageField())
                     .address(formDto.getAddressField())
                     .creDate(Date.valueOf(LocalDate.now()))
+                    .filename(file.getOriginalFilename())
                     .attachment(file.getBytes()).build();
          formRepo.save(form);
         }catch (Exception ex){

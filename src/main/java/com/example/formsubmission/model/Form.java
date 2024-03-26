@@ -27,6 +27,7 @@ public class Form {
     @Column(columnDefinition="MEDIUMBLOB")
     @Lob
     private byte[]  attachment;
+    private String filename;
     @Column(nullable = false)
     private String email;
     private Date creDate;
