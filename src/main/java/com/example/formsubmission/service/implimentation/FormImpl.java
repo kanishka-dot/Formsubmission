@@ -50,9 +50,9 @@ public class FormImpl implements FormService {
          formRepo.save(form);
         }catch (FormSubmitException | IOException ex){
             ex.printStackTrace();
-        return false;
+            return false;
         }
-        return true;
+            return true;
     }
     @Override
     public List<Form> getAllSubmitForms() {
