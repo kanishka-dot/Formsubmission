@@ -1,16 +1,16 @@
 package com.example.formsubmission.controler;
 
-import com.example.formsubmission.dto.FormDto;
 import com.example.formsubmission.exception.FormSubmitException;
+import com.example.formsubmission.model.Form;
 import com.example.formsubmission.response.FormResponse;
 import com.example.formsubmission.service.FormService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 
 @RestController
@@ -27,6 +27,11 @@ public class FormController {
             return ResponseEntity.ok().body(new FormResponse(HttpStatus.OK.value(),"Form submit success"));
         }
         throw new FormSubmitException();
+    }
+
+    @GetMapping("/clientForm/getAllFiles")
+    public List<Form> getAllSubmitForms(){
+        return formService.getAllSubmitForms();
     }
 
 }
